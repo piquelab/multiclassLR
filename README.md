@@ -6,7 +6,15 @@ Each individual SNP X treatment combination is labeled by the configuration with
 
 ## 1. Installation
 
-## 2. data preparation
+To install from within an R session:
+
+```R
+require(devtools)
+install_github('piquelab/multiclassLR')
+library('multiclassLR')
+```
+
+## 2. Data Preparation
 
 <!-- links -->
 [Wen et al, 2012]:http://arxiv.org/abs/1111.1210
