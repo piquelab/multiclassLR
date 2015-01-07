@@ -1,4 +1,4 @@
-multiclassLR
+multiclassLR: Implementation of multinomial logistic regressionfor predicting posterior configurations of MESH output 
 ============
 
-multinomial logistic regression model for MESH output 
+
