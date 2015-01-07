@@ -1,15 +1,14 @@
 ##' @title PlotMultiForest
 ##'
 
-PlotMultiForest <-
-function(ids, parms, SE){  
+PlotMultiForest <- function(ids, parms, SE, title){  
   ## requires a data.frame with ids, parameters, and SE
   system('mkdir -p multinomial')
   plot_dat <- data.frame(id=ids, mid=parms, lb=parms-1.96*se, ub=parms+1.96*se, stringsAsFactors=FALSE)
   require('ggplot2')
   pd <- position_dodge(width=0.5, height=NULL)
   p <- ggplot(plot_dat, aes(x=id, y=mid))
-  pdf('./multinomial/multinomial_parms_sig.pdf')
+  pdf(title)
   out_plot <- p + geom_abline(intercept=0, slope=0, colour='red',linetype=4) +
                 layer(geom="point", position=pd, geom_params=list(size=3.2)) +
                 geom_errorbar(aes(ymin=lb , ymax=ub), width=0.5, size=1, position=pd) +
